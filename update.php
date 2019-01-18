@@ -26,9 +26,9 @@ if ($text) {
             "im_value" => $username
         ]);
         if ($name) {
-            $texts = '绑定成功。良辰云用户名：'.$name;
+            $texts = '绑定成功。用户名：'.$name;
         } else {
-            $texts = '您的Telegram未绑定 良辰云 账号。';
+            $texts = '您的Telegram未绑定账号。';
         }
 
         $content = ['chat_id' => $chat_id, 'text' => $texts, 'reply_to_message_id' => $message_id ];
@@ -67,13 +67,13 @@ if ($text) {
 
 下注记录：'.$textss;
         } else {
-            $texts = '您的Telegram未绑定 良辰云 账号。';
+            $texts = '您的Telegram未绑定账号。';
         }
 
         $content = ['chat_id' => $chat_id, 'text' => $texts, 'reply_to_message_id' => $message_id ];
         $log = $telegram->sendMessage($content);
     } elseif ($text == '充值') {
-        $content = ['chat_id' => $chat_id, 'text' => '前往良辰云官网：http://良辰云.app 充值余额或购买流量。', 'reply_to_message_id' => $message_id ];
+        $content = ['chat_id' => $chat_id, 'text' => '前往官网：http://ourl.tw/ 充值余额或购买流量。', 'reply_to_message_id' => $message_id ];
         $log = $telegram->sendMessage($content);
     } elseif ($text == '开奖查询') {
         $data = $database->select("lottery", [
